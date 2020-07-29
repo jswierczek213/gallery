@@ -1,0 +1,53 @@
+@import '../../../assets/styles/variables.scss';
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $black;
+  z-index: 10;
+
+  .nav-row {
+    text-align: center;
+
+    .logo {
+      display: inline-block;
+      padding: 0.5em 0;
+      font-size: 28px;
+      color: $white;
+    }
+  }
+
+  .links-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    box-shadow: 0 2px 5px $black;
+    padding: 1em 0;
+
+    .link {
+      display: flex;
+      align-items: center;
+      margin: 0 1em;
+      cursor: pointer;
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .material-icons {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .search-bar-container {
+    background-color: $white;
+    padding: 1em 0;
+    box-shadow: 0 2px 5px $black;
+  }
+}

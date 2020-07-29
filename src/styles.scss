@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 @import 'assets/styles/variables.scss';
 
 * {
@@ -10,6 +11,28 @@ html, body {
 }
 
 body {
+  font-family: 'Rubik', sans-serif;
   font-size: 16px;
+  font-weight: 400;
   background-color: $white;
+
+  .bold {
+    font-weight: 700;
+  }
+
+  .material-icons.small {
+    font-size: 18px;
+  }
+
+  .material-icons.medium {
+    font-size: 24px;
+  }
+
+  .material-icons.big {
+    font-size: 36px;
+  }
+
+  .material-icons.large {
+    font-size: 48px;
+  }
 }
