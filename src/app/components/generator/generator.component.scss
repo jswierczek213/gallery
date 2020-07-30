@@ -1,0 +1,39 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    margin: 1em 0;
+  }
+
+  .generator-btn {
+    display: inline-block;
+    width: 250px;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+    padding: 0.4em 0;
+    font-size: 1.75em;
+    background-color: $red;
+    color: $white;
+    cursor: pointer;
+    transition: background-color 500ms;
+
+    &:hover {
+      background-color: $black;
+    }
+  }
+
+  .spinner-container {
+    padding: 1em 0;
+  }
+
+  .image-container {
+    padding: 1em;
+    overflow: hidden;
+  }
+}

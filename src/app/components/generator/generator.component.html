@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h2>Random photo generator</h2>
+
+  <div style="margin: 1em 0">
+    <select #orientation (change)="setOrientation(orientation.value)">
+      <option value="landscape">Landscape</option>
+      <option value="portrait">Portrait</option>
+      <option value="squarish">Squarish</option>
+    </select>
+  </div>
+
+  <button type="button" class="generator-btn" (click)="generate()">Generate</button>
+
+  <div class="spinner-container">
+    <app-spinner [size]="150" *ngIf="displaySpinner"></app-spinner>
+  </div>
+
+  <div *ngIf="photo" class="image-container">
+    <img [src]="photo.urls.raw + '&w=500'" [alt]="photo.alt_description" />
+  </div>
+
+</div>

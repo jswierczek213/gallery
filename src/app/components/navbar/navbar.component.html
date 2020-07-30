@@ -6,24 +6,29 @@
 
   <div class="nav-row links-container">
 
-    <a href="#" class="link">
-      <i class="material-icons medium">home</i>Home
+    <a routerLink="/home" class="link">
+      <i class="material-icons medium">home</i>
+      <span>Home</span>
     </a>
 
-    <a href="#" class="link">Generator</a>
-
-    <a href="#" class="link">
-      <i class="material-icons medium">star</i>Best photos
+    <a routerLink="/generator" class="link">
+      <span>Generator</span>
     </a>
 
     <a href="#" class="link">
-      <i class="material-icons medium">search</i>Search
+      <i class="material-icons medium">star</i>
+      <span>Best photos</span>
+    </a>
+
+    <a (click)="openSearchBar()" class="link">
+      <i class="material-icons medium">search</i>
+      <span>Search</span>
     </a>
 
   </div>
 
-  <div *ngIf="false"  class="nav-row search-bar-container">
-    <app-search-bar></app-search-bar>
+  <div *ngIf="displaySearchBar" class="nav-row search-bar-container">
+    <app-search-bar (closed)="closeSearchBar($event)"></app-search-bar>
   </div>
 
 </nav>

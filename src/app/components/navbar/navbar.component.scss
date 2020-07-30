@@ -35,11 +35,16 @@
       text-decoration: none;
       color: $black;
 
-      &:hover {
-        text-decoration: underline;
+      span {
+        color: $black;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       .material-icons {
+        color: $black;
         margin-right: 5px;
       }
     }

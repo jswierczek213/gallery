@@ -1,0 +1,94 @@
+@import '../../../assets/styles/variables.scss';
+
+.photo-list {
+  width: 100%;
+
+  h2 {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    a.more {
+      color: $red;
+      text-decoration: underline;
+      font-weight: 400;
+      font-size: 0.8em;
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  .photos-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    .photo-card {
+      width: 300px;
+      margin: 1em 0.5em;
+
+      .img-container {
+        width: 100%;
+        max-height: 200px;
+        overflow: hidden;
+        position: relative;
+
+        &:hover {
+          img {
+            filter: brightness(50%);
+          }
+
+          span.hidden-text {
+            display: inline-block;
+          }
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: filter 300ms;
+        }
+
+        span.hidden-text {
+          display: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1.5em;
+          font-weight: 700;
+          color: $white;
+          letter-spacing: 1px;
+          pointer-events: none;
+        }
+      }
+
+      .photo-details {
+        width: 100%;
+        padding: 1em 0.5em;
+        text-align: center;
+
+        a.name {
+          color: $black;
+          margin: 0;
+          font-weight: 400;
+          text-decoration: none;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

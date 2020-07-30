@@ -1,0 +1,21 @@
+<div class="photo-list">
+
+  <h2> {{ heading }} <a class="more">See more</a> </h2>
+
+  <div class="photos-wrapper">
+
+    <div class="photo-card" *ngFor="let photo of photoList">
+      <div class="img-container" oncontextmenu="return false">
+        <img [src]="photo.urls.raw + '&w=300'" [alt]="photo.alt_description" />
+        <span class="hidden-text">See details</span>
+      </div>
+      <div class="photo-details">
+        <a class="name">
+          {{ photo.alt_description ? photo.alt_description : 'photo without name' }}
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
