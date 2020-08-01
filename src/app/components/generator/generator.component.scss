@@ -9,31 +9,61 @@
     margin: 1em 0;
   }
 
+  select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: $black;
+    text-overflow: ellipsis;
+    color: $white;
+    border-radius: 4px;
+    box-shadow: none;
+    padding: 5px 10px;
+    white-space: nowrap;
+    font-size: inherit;
+    outline: none;
+    border: none;
+  }
+
   .generator-btn {
     display: inline-block;
     width: 250px;
     outline: none;
     border: none;
-    border-radius: 0;
+    border-radius: 10px;
     text-align: center;
     padding: 0.4em 0;
     font-size: 1.75em;
-    background-color: $red;
+    background-color: $black;
     color: $white;
     cursor: pointer;
     transition: background-color 500ms;
 
-    &:hover {
-      background-color: $black;
+    &:active {
+      transform: scale(0.98);
     }
   }
 
-  .spinner-container {
-    padding: 1em 0;
-  }
-
   .image-container {
+    min-height: 300px;
     padding: 1em;
     overflow: hidden;
+    position: relative;
+
+    img {
+      border-radius: 10px;
+    }
+
+    app-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }

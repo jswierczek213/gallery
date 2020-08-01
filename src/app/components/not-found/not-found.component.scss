@@ -1,0 +1,16 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+  width: 100%;
+  text-align: center;
+
+  .error-heading {
+    font-size: 4em;
+    color: $red;
+  }
+
+  .error-description {
+    font-size: 2em;
+    color: $black;
+  }
+}

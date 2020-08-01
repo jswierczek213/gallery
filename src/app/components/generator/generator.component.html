@@ -2,6 +2,8 @@
 
   <h2>Random photo generator</h2>
 
+  <p>Generate a photo with the given orientation</p>
+
   <div style="margin: 1em 0">
     <select #orientation (change)="setOrientation(orientation.value)">
       <option value="landscape">Landscape</option>
@@ -12,12 +14,12 @@
 
   <button type="button" class="generator-btn" (click)="generate()">Generate</button>
 
-  <div class="spinner-container">
-    <app-spinner [size]="150" *ngIf="displaySpinner"></app-spinner>
-  </div>
+  <div class="image-container">
 
-  <div *ngIf="photo" class="image-container">
-    <img [src]="photo.urls.raw + '&w=500'" [alt]="photo.alt_description" />
+    <img *ngIf="photo" [src]="photo.urls.raw + '&w=500'" [alt]="photo.alt_description" (load)="hideSpinner()" />
+
+    <app-spinner [size]="150" *ngIf="displaySpinner"></app-spinner>
+
   </div>
 
 </div>

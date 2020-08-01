@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { PhotoService } from 'src/app/services/photo.service';
 import { Subscription } from 'rxjs';
-import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-generator',
@@ -30,15 +29,15 @@ export class GeneratorComponent implements OnDestroy {
     this.displaySpinner = true;
 
     this.subscriptions.push(
-      this.photoService.getRandomPhoto(this.orientation)
-      .pipe(
-        finalize(() => this.displaySpinner = false)
-      )
-      .subscribe(
+      this.photoService.getRandomPhoto(this.orientation).subscribe(
         (photo) => this.photo = photo,
         (err) => console.error(err)
       )
     );
+  }
+
+  hideSpinner() {
+    this.displaySpinner = false;
   }
 
   ngOnDestroy(): void {

@@ -2,15 +2,19 @@
 
   <h2> {{ heading }} <a class="more">See more</a> </h2>
 
+  <app-spinner [size]="100" *ngIf="displaySpinner"></app-spinner>
+
   <div class="photos-wrapper">
 
     <div class="photo-card" *ngFor="let photo of photoList">
-      <div class="img-container" oncontextmenu="return false">
-        <img [src]="photo.urls.raw + '&w=300'" [alt]="photo.alt_description" />
-        <span class="hidden-text">See details</span>
+      <div class="image-wrapper">
+        <div class="img-container" oncontextmenu="return false" [routerLink]="'/photo/' + photo.id">
+          <img [src]="photo.urls.raw + '&w=300'" [alt]="photo.alt_description" />
+          <span class="hidden-text">See details</span>
+        </div>
       </div>
       <div class="photo-details">
-        <a class="name">
+        <a class="name" [routerLink]="'/photo/' + photo.id">
           {{ photo.alt_description ? photo.alt_description : 'photo without name' }}
         </a>
       </div>

@@ -1,0 +1,78 @@
+<div class="container">
+
+  <app-spinner *ngIf="displaySpinner" [size]="300"></app-spinner>
+
+  <h2 *ngIf="photo">Photo details</h2>
+
+  <div class="details-container" *ngIf="photo">
+    <div class="grid-item">
+
+      <div class="image-container" oncontextmenu="return false">
+        <img [src]="photo.urls.regular" [alt]="photo.alt_description" class="image">
+      </div>
+
+      <div class="btn-container">
+        <a class="btn" [href]="photo.urls.regular" target="_blank" (click)="emitDownloadEvent(photo.id)">
+          <span>Download</span>
+          <i class="material-icons medium">get_app</i>
+        </a>
+      </div>
+
+      <div class="create-date-container">
+        <h4>Created at</h4>
+        <p> {{ photo.created_at ? (photo.created_at | date:'dd-mm-yyyy') : 'No data' }} </p>
+      </div>
+
+      <div class="link-container">
+        <a class="link" [href]="photo.links.html">See photo on unsplash</a>
+      </div>
+
+      <div class="tags-container">
+        <p class="tags"> <span *ngFor="let tag of photo.tags"> {{ tag.title }} </span> </p>
+      </div>
+
+    </div>
+    <div class="grid-item">
+
+      <div class="info photo-name">
+        <h4>Photo name</h4>
+        <p> {{ photo.alt_description ? photo.alt_description : 'This photo do not have a name' }} </p>
+      </div>
+
+      <div class="info photo-description">
+        <h4>Photo description</h4>
+        <p> {{ photo.description ? photo.description : 'This photo do not have description' }} </p>
+      </div>
+
+      <p class="info photo-views">
+        Views: <span class="value"> {{ photo.views ? photo.views : 'No data' }} </span>
+      </p>
+
+      <p class="info photo-likes">
+        Likes: <span class="value"> {{ photo.likes ? photo.likes : 'No data' }} </span>
+      </p>
+
+      <p class="info photo-downloads">
+        Downloads: <span class="value"> {{ photo.downloads ? photo.downloads : 'No data' }} </span>
+      </p>
+
+      <div class="author-name-container">
+        <h4>Author</h4>
+        <p> {{ photo.user.first_name ? photo.user.first_name : 'No data' }} </p>
+      </div>
+
+      <div class="author-bio-container">
+        <h4>Biography</h4>
+        <p> {{ photo.user.bio ? photo.user.bio : 'No data' }} </p>
+      </div>
+
+      <div class="author-link-container">
+        <a [href]="photo.user.links.html" class="link">See author details on unsplash</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<app-not-found *ngIf="errorOccured"></app-not-found>

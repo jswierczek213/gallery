@@ -1,0 +1,248 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+
+    .details-container {
+      gap: 1em;
+    }
+  }
+
+  app-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .details-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 2fr);
+    gap: 2em;
+
+    .grid-item {
+
+      .image-container {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+
+        .image {
+          display: block;
+          width: 100%;
+          border-radius: 15px;
+        }
+      }
+
+      .btn-container {
+        width: 100%;
+        padding: 1em 0;
+
+        .btn {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+          width: fit-content;
+          text-decoration: none;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          padding: 0.5em 1.5em;
+          cursor: pointer;
+          border-radius: 10px;
+          background-color: $black;
+          margin: 0 auto;
+
+          &:hover {
+            span, .material-icons {
+              color: $lightBlue;
+            }
+          }
+
+          span, .material-icons {
+            color: $white;
+            transition: color 350ms;
+          }
+
+          span {
+            font-size: 1.25em;
+            margin-right: 5px;
+          }
+
+          .material-icons {
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .create-date-container {
+        width: 100%;
+        padding: 0.5em 0;
+        text-align: center;
+
+        h4 {
+          color: $lightBlue;
+          margin: 0 0 7px 0;
+        }
+
+        p {
+          margin: 0;
+          word-wrap: break-word;
+          white-space: pre-line;
+        }
+      }
+
+      .link-container {
+        width: 100%;
+        text-align: center;
+        padding: 0.5em 0;
+
+        .link {
+          color: $red;
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+
+      .tags-container {
+        width: 100%;
+        text-align: center;
+        padding: 0.5em 0 0 0;
+
+        .tags {
+          font-size: 0.9em;
+          color: $lightBlue;
+
+          span {
+            margin: 0 3px;
+
+            &::before {
+              content: '#';
+            }
+          }
+        }
+      }
+
+      .info {
+        width: 100%;
+        margin: 0;
+        padding: 0.5em 0;
+        text-align: left;
+
+        &:first-child {
+          padding: 0 0 0.5em 0;
+        }
+
+        &:last-child {
+          padding: 0.5em 0 0 0;
+        }
+      }
+
+      .photo-name {
+        font-size: 1.15em;
+        color: $black;
+
+        h4 {
+          color: $lightBlue;
+          margin: 0 0 7px 0;
+        }
+
+        p {
+          margin: 0;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: pre-line;
+        }
+      }
+
+      .photo-description {
+        font-size: 1em;
+        color: $black;
+
+        h4 {
+          color: $lightBlue;
+          margin: 0 0 7px 0;
+        }
+
+        p {
+          margin: 0;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: pre-line;
+        }
+      }
+
+      .photo-views, .photo-likes, .photo-downloads {
+        font-size: 0.8em;
+        color: $black;
+
+        .value {
+          color: $red;
+        }
+      }
+
+      .author-name-container {
+        width: 100%;
+        text-align: left;
+        padding: 0.5em 0;
+
+        h4 {
+          margin: 0 0 7px 0;
+          color: $lightBlue;
+        }
+
+        p {
+          margin: 0;
+          color: $black;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: pre-line;
+        }
+      }
+
+      .author-bio-container {
+        width: 100%;
+        text-align: left;
+        padding: 0.5em 0;
+
+        h4 {
+          margin: 0 0 7px 0;
+          color: $lightBlue;
+        }
+
+        p {
+          margin: 0;
+          color: $black;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: pre-line;
+        }
+      }
+
+      .author-link-container {
+        width: 100%;
+        text-align: left;
+        padding: 0.5em 0 0 0;
+
+        .link {
+          color: $red;
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

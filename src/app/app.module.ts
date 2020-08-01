@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PhotoListComponent } from './components/photo-list/photo-list.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { GeneratorComponent } from './components/generator/generator.component';
+import { PhotoDetailsComponent } from './components/photo-details/photo-details.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { GeneratorComponent } from './components/generator/generator.component';
     HomeComponent,
     PhotoListComponent,
     SpinnerComponent,
-    GeneratorComponent
+    GeneratorComponent,
+    PhotoDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

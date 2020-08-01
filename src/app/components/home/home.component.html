@@ -1,7 +1,13 @@
 <div class="container">
 
-  <app-photo-list heading="Popular photos" [photoList]="popularPhotos"></app-photo-list>
+  <app-photo-list
+  heading="Popular photos"
+  [photoList]="popularPhotos"
+  [displaySpinner]="displayPopularPhotosSpinner"></app-photo-list>
 
-  <app-photo-list heading="Latest photos" [photoList]="latestPhotos"></app-photo-list>
+  <app-photo-list
+  heading="Latest photos"
+  [photoList]="latestPhotos"
+  [displaySpinner]="displayLatestPhotosSpinner"></app-photo-list>
 
 </div>

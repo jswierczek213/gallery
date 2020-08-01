@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-photo-list',
@@ -12,5 +12,6 @@ export class PhotoListComponent {
   @Input() heading: string;
   @Input() url: string;
   @Input() photoList: Array<any> = [];
+  @Input() displaySpinner = true;
 
 }
