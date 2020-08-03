@@ -16,6 +16,7 @@ export class StatisticsComponent implements OnInit {
   public type: 'total' | 'month';
 
   public displaySpinner = false;
+  public errorOccured = false;
 
   private subscriptions: Array<Subscription> = [];
 
@@ -28,6 +29,8 @@ export class StatisticsComponent implements OnInit {
       return;
     }
 
+    this.errorOccured = false;
+
     this.type = 'total';
     this.statistics = undefined;
     this.displaySpinner = true;
@@ -39,7 +42,7 @@ export class StatisticsComponent implements OnInit {
       )
       .subscribe(
         (stats) => this.statistics = stats,
-        (error) => console.error(error)
+        (error) => this.errorOccured = true
       )
     );
   }
@@ -48,6 +51,8 @@ export class StatisticsComponent implements OnInit {
     if (this.type === 'month') {
       return;
     }
+
+    this.errorOccured = false;
 
     this.type = 'month';
     this.statistics = undefined;
@@ -60,7 +65,7 @@ export class StatisticsComponent implements OnInit {
       )
       .subscribe(
         (stats) => this.statistics = stats,
-        (error) => console.error(error)
+        (error) => this.errorOccured = true
       )
     );
   }
