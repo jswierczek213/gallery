@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { PhotoService } from 'src/app/services/photo.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-generator',
@@ -9,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class GeneratorComponent implements OnDestroy {
 
-  constructor(private photoService: PhotoService) { }
+  constructor(private photoService: PhotoService, private router: Router) { }
 
   private orientation: 'landscape' | 'portrait' | 'squarish' = 'landscape';
 
@@ -38,6 +39,10 @@ export class GeneratorComponent implements OnDestroy {
 
   hideSpinner() {
     this.displaySpinner = false;
+  }
+
+  moveToPhotoDetails() {
+    this.router.navigate(['/photo/' + this.photo.id]);
   }
 
   ngOnDestroy(): void {

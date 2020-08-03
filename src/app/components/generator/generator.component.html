@@ -16,7 +16,13 @@
 
   <div class="image-container">
 
-    <img *ngIf="photo" [src]="photo.urls.raw + '&w=500'" [alt]="photo.alt_description" (load)="hideSpinner()" />
+    <img
+    *ngIf="photo"
+    [src]="photo.urls.raw + '&w=500'"
+    [alt]="photo.alt_description"
+    (load)="hideSpinner()"
+    (click)="moveToPhotoDetails()"
+    oncontextmenu="return false"/>
 
     <app-spinner [size]="150" *ngIf="displaySpinner"></app-spinner>
 
