@@ -1,0 +1,163 @@
+<div class="container">
+
+  <ng-container *ngIf="statistics && type && type === 'total'">
+
+    <div class="flex-container">
+
+      <div class="box">
+
+        <div class="property-container"> Photos </div>
+
+        <div class="value-container"> {{ statistics.photos }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Downloads </div>
+
+        <div class="value-container"> {{ statistics.downloads }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Views </div>
+
+        <div class="value-container"> {{ statistics.views }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Photographers </div>
+
+        <div class="value-container"> {{ statistics.photographers }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Pixels </div>
+
+        <div class="value-container"> {{ statistics.pixels }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Downloads / s </div>
+
+        <div class="value-container"> {{ statistics.downloads_per_second }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Views / s </div>
+
+        <div class="value-container"> {{ statistics.views_per_second }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Developers </div>
+
+        <div class="value-container"> {{ statistics.developers }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Applications </div>
+
+        <div class="value-container"> {{ statistics.applications }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Requests </div>
+
+        <div class="value-container"> {{ statistics.requests }} </div>
+
+      </div>
+
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="statistics && type && type === 'month'">
+
+    <div class="flex-container">
+
+      <div class="box">
+
+        <div class="property-container"> Downloads </div>
+
+        <div class="value-container"> {{ statistics.downloads }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> Views </div>
+
+        <div class="value-container"> {{ statistics.views }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> New photos </div>
+
+        <div class="value-container"> {{ statistics.new_photos }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> New photographers </div>
+
+        <div class="value-container"> {{ statistics.new_photographers }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> New pixels </div>
+
+        <div class="value-container"> {{ statistics.new_pixels }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> New developers </div>
+
+        <div class="value-container"> {{ statistics.new_developers }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> New applications </div>
+
+        <div class="value-container"> {{ statistics.new_applications }} </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="property-container"> New requests </div>
+
+        <div class="value-container"> {{ statistics.new_requests }} </div>
+
+      </div>
+
+    </div>
+
+  </ng-container>
+
+</div>

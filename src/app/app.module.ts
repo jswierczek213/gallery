@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { PhotoService } from './services/photo.service';
@@ -15,6 +17,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { GeneratorComponent } from './components/generator/generator.component';
 import { PhotoDetailsComponent } from './components/photo-details/photo-details.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { StatisticsViewComponent } from './components/statistics-view/statistics-view.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +31,17 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     SpinnerComponent,
     GeneratorComponent,
     PhotoDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SearchResultsComponent,
+    StatisticsComponent,
+    StatisticsViewComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [PhotoService, SearchService],
   bootstrap: [AppComponent]

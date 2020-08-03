@@ -58,6 +58,10 @@
           background-color: $black;
           margin: 0 auto;
 
+          @media screen and (max-width: 600px) {
+            padding: 0.4em 1em;
+          }
+
           &:hover {
             span, .material-icons {
               color: $lightBlue;
@@ -72,10 +76,20 @@
           span {
             font-size: 1.25em;
             margin-right: 5px;
+
+            @media screen and (max-width: 600px) {
+              font-size: 1em;
+            }
           }
 
           .material-icons {
             margin-left: 5px;
+          }
+
+          .medium {
+            @media screen and (max-width: 600px) {
+              font-size: 1em;
+            }
           }
         }
       }

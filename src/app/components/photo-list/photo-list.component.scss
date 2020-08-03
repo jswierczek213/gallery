@@ -102,4 +102,31 @@
       }
     }
   }
+
+  .btn-container {
+    display: block;
+    padding: 1em 0;
+    text-align: center;
+
+    .btn {
+      display: inline-block;
+      padding: 0.5em 1em;
+      font-size: 1.25em;
+      font-weight: 400;
+      color: $white;
+      background-color: $black;
+      border-radius: 10px;
+      cursor: pointer;
+      outline: none;
+      border: none;
+
+      &:hover {
+        box-shadow: 0 3px 3px $red;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
 }

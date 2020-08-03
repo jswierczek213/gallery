@@ -40,4 +40,9 @@ export class PhotoService {
     const headers = new HttpHeaders({ Authorization: 'Client-ID ' + this.accessKey });
     return this.http.get(`${this.api}/photos/${photoId}/download`, { headers });
   }
+
+  getUnsplashStatistics(type: 'total' | 'month') {
+    const headers = new HttpHeaders({ Authorization: 'Client-ID ' + this.accessKey });
+    return this.http.get(`${this.api}/stats/${type}`, { headers });
+  }
 }

@@ -21,9 +21,10 @@ export class SearchService {
     page = 1,
     photosCount = 10,
     orderBy: 'latest' | 'relevant' = 'relevant',
-    orientation: 'landscape' | 'portrait' | 'squerish' = 'landscape') {
+    orientation: 'landscape' | 'portrait' | 'squerish' = 'landscape'
+    ) {
     const headers = new HttpHeaders({ Authorization: 'Client-ID ' + this.accessKey });
-    const url = `${this.api}/search/photos?query=${query}&page=${page}&photosCount=${photosCount}&order_by=${orderBy}&orientation=${orientation}`;
+    const url = `${this.api}/search/photos?query=${query}&page=${page}&per_page=${photosCount}&order_by=${orderBy}&orientation=${orientation}`;
     return this.http.get(url, { headers });
   }
 }

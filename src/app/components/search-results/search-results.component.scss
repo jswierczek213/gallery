@@ -1,0 +1,76 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+
+  app-spinner {
+    display: block;
+    width: fit-content;
+    margin: 50px auto;
+  }
+
+  .page-controls-container {
+    width: fit-content;
+    margin: 25px auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    .link {
+      color: $black;
+      font-size: 0.9em;
+      text-decoration: none;
+      margin: 0 5px;
+      cursor: pointer;
+
+      @media screen and (max-width: 600px) {
+        font-size: 0.8em;
+      }
+
+      &:hover {
+        color: $lightBlue;
+        text-decoration: underline;
+      }
+    }
+
+    .box {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid $black;
+
+      @media screen and (max-width: 600px) {
+        padding: 0;
+        border: none;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: $black;
+        background-color: $lightBlue;
+      }
+    }
+
+    .active {
+      background-color: $black;
+      color: $white;
+      pointer-events: none;
+
+      @media screen and (max-width: 600px) {
+        padding: 3px;
+      }
+    }
+  }
+
+  .not-found {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 2em;
+    color: $red;
+  }
+}

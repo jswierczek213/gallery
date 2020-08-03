@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   private subscriptions: Array<Subscription> = [];
 
   ngOnInit(): void {
-
     // Get popular photos
     this.subscriptions.push(
       this.photoService.getListFromAllPhotos(undefined, 8, 'popular')

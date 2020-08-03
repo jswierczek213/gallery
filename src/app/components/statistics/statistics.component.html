@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="heading-container">
+    <h2>Statistics of the unsplash <span class="info">*</span></h2>
+    <small><span class="info">*</span> unsplash is the source of all pictures on this website</small>
+  </div>
+
+  <div class="view-control-container">
+
+    <div class="btn-container" [class.active]="type === 'total'">
+
+      <button class="btn" (click)="getTotalStatistics()">Total</button>
+
+    </div>
+
+    <div class="btn-container" [class.active]="type === 'month'">
+
+      <button class="btn" (click)="getMonthStatistics()">Month</button>
+
+    </div>
+
+  </div>
+
+  <div class="spinner-container" *ngIf="displaySpinner">
+
+    <app-spinner [size]="100"></app-spinner>
+
+  </div>
+
+  <app-statistics-view [statistics]="statistics" [type]="type"></app-statistics-view>
+
+</div>

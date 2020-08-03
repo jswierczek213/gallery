@@ -2,11 +2,11 @@
 
   <h2>Search photo</h2>
 
-  <form autocomplete="off" novalidate>
+  <form [formGroup]="searchForm" autocomplete="off" novalidate>
 
-    <input type="text" placeholder="Mountains" />
+    <input formControlName="query" type="text" placeholder="Mountains" required (keyup.enter)="search()" />
 
-    <button type="submit">
+    <button type="submit" (click)="search()">
       <i class="material-icons medium">search</i>
     </button>
 

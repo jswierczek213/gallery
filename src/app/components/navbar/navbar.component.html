@@ -1,4 +1,5 @@
-<nav class="navbar">
+<!-- Desktop navbar -->
+<nav class="desktop-navbar" *ngIf="!isMobile">
 
   <div class="nav-row">
     <span class="logo">GALLERY</span>
@@ -15,9 +16,9 @@
       <span>Generator</span>
     </a>
 
-    <a href="#" class="link">
-      <i class="material-icons medium">star</i>
-      <span>Best photos</span>
+    <a routerLink="/statistics" class="link">
+      <i class="material-icons medium">analytics</i>
+      <span>Statistics</span>
     </a>
 
     <a (click)="openSearchBar()" class="link">
@@ -29,6 +30,30 @@
 
   <div *ngIf="displaySearchBar" class="nav-row search-bar-container">
     <app-search-bar (closed)="closeSearchBar($event)"></app-search-bar>
+  </div>
+
+</nav>
+
+<!-- Mobile navbar -->
+<nav class="mobile-navbar" *ngIf="isMobile">
+  <div class="flex-container">
+
+    <a class="link logo" routerLink="/home">GALLERY</a>
+
+    <button type="button" class="menu" (click)="toggleSidenav()">
+      <i [@rotateButton]="isOpen ? 'rotated' : 'normal'" class="material-icons medium">menu</i>
+    </button>
+
+    <div [@toggleSidenav]="isOpen ? 'open' : 'closed'" class="sidenav">
+      <a class="link" routerLink="/home" (click)="toggleSidenav()">Home page</a>
+      <a class="link" routerLink="/generator" (click)="toggleSidenav()">Generator</a>
+      <a class="link" routerLink="/statistics" (click)="toggleSidenav()">Statistics</a>
+    </div>
+
+  </div>
+
+  <div class="search-bar-container">
+    <app-search-bar></app-search-bar>
   </div>
 
 </nav>

@@ -1,6 +1,6 @@
 <div class="photo-list">
 
-  <h2> {{ heading }} <a class="more">See more</a> </h2>
+  <h2> {{ heading }} <a *ngIf="url" class="more">See more</a> </h2>
 
   <app-spinner [size]="100" *ngIf="displaySpinner"></app-spinner>
 
@@ -8,8 +8,14 @@
 
     <div class="photo-card" *ngFor="let photo of photoList">
       <div class="image-wrapper">
-        <div class="img-container" oncontextmenu="return false" [routerLink]="'/photo/' + photo.id">
-          <img [src]="photo.urls.raw + '&w=300'" [alt]="photo.alt_description" />
+        <div
+        class="img-container"
+        oncontextmenu="return false"
+        [routerLink]="'/photo/' + photo.id">
+          <img
+          [src]="photo.urls.raw + '&w=300'"
+          [alt]="photo.alt_description"
+          onerror="this.style.display = 'none';" />
           <span class="hidden-text">See details</span>
         </div>
       </div>
@@ -21,5 +27,16 @@
     </div>
 
   </div>
+
+  <div class="btn-container">
+
+    <button class="btn" type="button" *ngIf="displayButton; else spinner">Load more</button>
+
+    <ng-template #spinner>
+      <app-spinner *ngIf="enableLoading" style="margin: 0 auto" [size]="100"></app-spinner>
+    </ng-template>
+
+  </div>
+
 
 </div>

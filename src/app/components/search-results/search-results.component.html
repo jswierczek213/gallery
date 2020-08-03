@@ -1,0 +1,41 @@
+<div class="container" #resultsContainer>
+
+  <app-spinner [size]="200" *ngIf="displaySpinner"></app-spinner>
+
+  <ng-container *ngIf="data && (data.total > 0)">
+
+    <app-photo-list [heading]="'Search results'" [photoList]="data.results"></app-photo-list>
+
+    <div class="page-controls-container">
+
+      <a class="link" *ngIf="page > 1" (click)="changePage(page - 1)">Previous page</a>
+
+      <a *ngIf="page > 2" class="link box" (click)="changePage(1)">1</a>
+
+      <span *ngIf="page > 2">...</span>
+
+      <a *ngIf="page > 1" class="link box" (click)="changePage(page - 1)"> {{ page - 1 }} </a>
+      <a class="link box active"> {{ page }} </a>
+      <a *ngIf="page < data.total_pages" class="link box" (click)="changePage(page + 1)"> {{ page + 1 }} </a>
+
+      <span *ngIf="page < (data.total_pages - 1)" >...</span>
+
+      <a
+      *ngIf="page < (data.total_pages - 1)"
+      class="link box"
+      (click)="changePage(data.total_pages)"> {{ data.total_pages }} </a>
+
+      <a class="link" *ngIf="page < data.total_pages" (click)="changePage(page + 1)">Next page</a>
+
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="data && (data.total === 0)">
+    <!-- No results -->
+    <h2 class="not-found">We have not found photos related to the given query</h2>
+  </ng-container>
+
+</div>
+
+<app-not-found *ngIf="errorOccured"></app-not-found>

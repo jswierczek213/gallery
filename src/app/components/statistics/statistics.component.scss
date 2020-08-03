@@ -1,0 +1,66 @@
+@import '../../../assets/styles/variables.scss';
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 760px) {
+    width: 100%;
+  }
+
+  .heading-container {
+    text-align: center;
+
+    h2 {
+      font-weight: 400;
+      margin: 0 0 7px 0;
+      color: $black;
+    }
+
+    .info {
+      color: $red;
+    }
+  }
+
+  .view-control-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 0;
+
+    .btn-container {
+      background-color: $white;
+      width: fit-content;
+      padding: 0.5em 1em;
+
+      .btn {
+        display: inline-block;
+        width: 100px;
+        padding: 5px 0;
+        background-color: $black;
+        color: $white;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 350ms;
+
+        &:hover {
+          background-color: $red;
+        }
+      }
+    }
+
+    .active {
+      background-color: $lightBlue;
+    }
+  }
+
+  .spinner-container {
+    text-align: center;
+    margin-top: 2em;
+  }
+
+}
